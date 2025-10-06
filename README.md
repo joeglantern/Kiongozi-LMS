@@ -1,14 +1,12 @@
 # Kiongozi LMS Frontend
 
-A clean, Odin Project-inspired learning management system for green economy and digital skills education.
-
 ## Features
 
-- 🌱 **Course Browser** - Browse all available learning paths
-- 📚 **Course Details** - View course modules and enroll
-- 📖 **Module Viewer** - Read lessons with markdown support
-- 📊 **Progress Tracking** - Track your learning journey
-- 🎯 **My Learning** - Dashboard for enrolled courses
+-  **Course Browser** - Browse all available learning paths
+-  **Course Details** - View course modules and enroll
+-  **Module Viewer** - Read lessons with markdown support
+-  **Progress Tracking** - Track your learning journey
+-  **My Learning** - Dashboard for enrolled courses
 
 ## Tech Stack
 

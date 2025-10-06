@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useUser } from '../contexts/UserContext';
-import { BookOpen, GraduationCap, TrendingUp, Wand2 } from 'lucide-react';
+import { BookOpen, GraduationCap, TrendingUp, Wand2, LogOut, User, ChevronDown } from 'lucide-react';
+import { DropdownMenu, DropdownMenuItem } from '@/components/ui/dropdown-menu';
+import { getSupabase } from '../utils/supabaseClient';
 
 export default function LMSLayout({
   children,
@@ -13,12 +15,19 @@ export default function LMSLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const router = useRouter();
   const { user, loading } = useUser();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleSignOut = async () => {
+    const supabase = getSupabase();
+    await supabase.auth.signOut();
+    router.push('/login');
+  };
 
   const navigation = [
     { name: 'All Paths', href: '/lms/browse', icon: BookOpen },
@@ -93,14 +102,32 @@ export default function LMSLayout({
               </a>
 
               {user && (
-                <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-md bg-gray-800/50 border border-gray-700">
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gradient-to-br from-[#10b981] to-[#059669] flex items-center justify-center text-white text-xs font-medium flex-shrink-0">
-                    {user.full_name?.charAt(0) || user.email?.charAt(0) || 'U'}
+                <DropdownMenu
+                  trigger={
+                    <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-md bg-gray-800/50 border border-gray-700 hover:bg-gray-800/70 transition-colors">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gradient-to-br from-[#10b981] to-[#059669] flex items-center justify-center text-white text-xs font-medium flex-shrink-0">
+                        {user.full_name?.charAt(0) || user.email?.charAt(0) || 'U'}
+                      </div>
+                      <span className="text-xs sm:text-sm font-medium text-gray-300 hidden sm:inline max-w-[100px] truncate">
+                        {user.full_name || user.email?.split('@')[0]}
+                      </span>
+                      <ChevronDown className="w-3.5 h-3.5 text-gray-400 hidden sm:block" />
+                    </div>
+                  }
+                >
+                  <div className="px-4 py-3 border-b border-gray-100">
+                    <p className="text-sm font-medium text-gray-900 truncate">
+                      {user.full_name || 'User'}
+                    </p>
+                    <p className="text-xs text-gray-500 truncate">{user.email}</p>
                   </div>
-                  <span className="text-xs sm:text-sm font-medium text-gray-300 hidden sm:inline max-w-[100px] truncate">
-                    {user.full_name || user.email?.split('@')[0]}
-                  </span>
-                </div>
+                  <DropdownMenuItem onClick={handleSignOut} className="text-red-600 hover:bg-red-50">
+                    <div className="flex items-center gap-2">
+                      <LogOut className="w-4 h-4" />
+                      Sign Out
+                    </div>
+                  </DropdownMenuItem>
+                </DropdownMenu>
               )}
             </div>
           </div>

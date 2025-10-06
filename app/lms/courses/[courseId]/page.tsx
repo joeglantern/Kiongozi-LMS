@@ -244,7 +244,7 @@ export default function CourseDetailPage() {
           <Card className="mb-6 sm:mb-8 p-4 sm:p-6 bg-white border border-gray-200">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">What You'll Learn</h2>
             <ul className="space-y-2">
-              {course.learning_outcomes.map((outcome, index) => (
+              {course.learning_outcomes.map((outcome: string, index: number) => (
                 <li key={index} className="flex items-start gap-2 sm:gap-3">
                   <Check className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span className="text-sm sm:text-base text-gray-700">{outcome}</span>
@@ -259,7 +259,7 @@ export default function CourseDetailPage() {
           <Card className="p-4 sm:p-6 bg-white border border-gray-200">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Prerequisites</h2>
             <ul className="space-y-2">
-              {course.prerequisites.map((prereq, index) => (
+              {course.prerequisites.map((prereq: string, index: number) => (
                 <li key={index} className="flex items-start gap-2 sm:gap-3">
                   <span className="text-gray-500">•</span>
                   <span className="text-sm sm:text-base text-gray-700">{prereq}</span>

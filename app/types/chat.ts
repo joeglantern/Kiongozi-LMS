@@ -1,6 +1,13 @@
 import type { ResearchResponse } from '../utils/deep-research-agent';
-import type { Artifact } from '../components/artifacts/types';
 import type { EnhancedCommandResponse } from './lms';
+
+// Artifact type definition
+export interface Artifact {
+  id: string;
+  type: string;
+  title: string;
+  content: string;
+}
 
 // Use the ResearchResponse type as DeepResearchResponse for all references
 export type DeepResearchResponse = ResearchResponse;

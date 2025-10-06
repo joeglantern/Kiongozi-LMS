@@ -219,7 +219,7 @@ export default function MyLearningPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Recent Activity</h2>
             <Card className="bg-white border border-gray-200">
               <div className="divide-y divide-gray-200">
-                {stats.recent_activity.slice(0, 5).map((activity, index) => (
+                {stats.recent_activity.slice(0, 5).map((activity: any, index: number) => (
                   <div key={index} className="p-4 hover:bg-gray-50 transition-colors">
                     <div className="flex items-center justify-between">
                       <div className="flex-1">

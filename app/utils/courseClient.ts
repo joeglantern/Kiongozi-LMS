@@ -46,7 +46,7 @@ export async function getCourses(filters?: {
   }
 
   // Transform data to match Course type
-  const courses: Course[] = (data || []).map((course: any) => ({
+  const courses = (data || []).map((course: any) => ({
     id: course.id,
     title: course.title,
     description: course.description,
@@ -61,7 +61,7 @@ export async function getCourses(filters?: {
     enrollment_count: course.enrollment_count || 0,
     created_at: course.created_at,
     published_at: course.published_at
-  }));
+  })) as unknown as Course[];
 
   return { success: true, data: courses };
 }

@@ -157,7 +157,7 @@ export default function BrowsePage() {
                     <div className="flex items-center justify-center gap-2 mt-1">
                       <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-400" />
                       <span className="text-xs sm:text-sm text-gray-400">
-                        {course.module_count || 0} Courses
+                        {course.module_count || 0} modules
                       </span>
                     </div>
                   </div>

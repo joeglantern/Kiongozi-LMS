@@ -34,6 +34,9 @@ export default function CourseDetailPage() {
       const courseRes = await getCourse(courseId);
 
       if (courseRes.success && courseRes.data) {
+        console.log('📚 Course data loaded:', courseRes.data);
+        console.log('📦 Modules received:', courseRes.data.modules);
+        console.log('📊 Module count:', courseRes.data.modules?.length || 0);
         setCourse(courseRes.data);
         setModules(courseRes.data.modules || []);
       }
@@ -195,8 +198,16 @@ export default function CourseDetailPage() {
           ) : (
             <div className="space-y-2 sm:space-y-3">
               {modules.map((courseModule, index) => {
+                console.log(`🔍 Module ${index + 1}:`, courseModule);
+                console.log(`   🔗 course_module id: ${courseModule.id}`);
+                console.log(`   🎯 module_id (if exists): ${courseModule.module_id || 'N/A'}`);
                 const module = courseModule.learning_modules;
-                if (!module) return null;
+                console.log(`   📘 learning_modules data:`, module);
+                if (!module) {
+                  console.log(`   ⚠️ Module ${index + 1} skipped - learning_modules is null/undefined`);
+                  console.log(`   💡 This means the module_id in course_modules doesn't match any module in learning_modules table`);
+                  return null;
+                }
 
                 return (
                   <Link

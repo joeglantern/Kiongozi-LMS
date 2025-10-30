@@ -76,6 +76,7 @@ export async function getCourse(courseId: string) {
       category:module_categories(id, name, color, icon),
       modules:course_modules(
         id,
+        module_id,
         order_index,
         is_required,
         learning_modules(

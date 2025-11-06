@@ -170,17 +170,101 @@ export default function LMSLayout({
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 bg-white/80 mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-gray-600">
-              © 2025 Kiongozi. Empowering green & digital transitions.
-            </p>
-            <div className="flex gap-6 text-sm">
-              <a href="#" className="text-gray-600 hover:text-gray-900">About</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">Support</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">Privacy</a>
+      <footer className="border-t border-gray-800 bg-[#1c1d1f] mt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          {/* Main Footer Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-12 mb-12">
+            {/* Left: Logo + Brand */}
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 relative flex-shrink-0">
+                  <Image
+                    src="/Kiongozi.png"
+                    alt="Kiongozi LMS"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white tracking-tight">KIONGOZI LMS</h3>
+                  <p className="text-xs text-gray-500 mt-0.5">Kiongozi Learning Management System</p>
+                </div>
+              </div>
             </div>
+
+            {/* Right: Link Columns */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-12">
+              {/* Platform */}
+              <div>
+                <h4 className="text-sm font-semibold text-white mb-4 uppercase tracking-wide">Platform</h4>
+                <ul className="space-y-3">
+                  <li>
+                    <Link href="/lms/browse" className="group flex items-center gap-2 text-sm text-gray-400 hover:text-[#c9975b] transition-all duration-200">
+                      <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-[#c9975b] transition-colors"></span>
+                      <span>Browse Courses</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/lms/my-learning" className="group flex items-center gap-2 text-sm text-gray-400 hover:text-[#c9975b] transition-all duration-200">
+                      <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-[#c9975b] transition-colors"></span>
+                      <span>My Learning</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/lms/progress" className="group flex items-center gap-2 text-sm text-gray-400 hover:text-[#c9975b] transition-all duration-200">
+                      <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-[#c9975b] transition-colors"></span>
+                      <span>Progress</span>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Support */}
+              <div>
+                <h4 className="text-sm font-semibold text-white mb-4 uppercase tracking-wide">Support</h4>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="#" className="group flex items-center gap-2 text-sm text-gray-400 hover:text-[#c9975b] transition-all duration-200">
+                      <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-[#c9975b] transition-colors"></span>
+                      <span>About Us</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="group flex items-center gap-2 text-sm text-gray-400 hover:text-[#c9975b] transition-all duration-200">
+                      <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-[#c9975b] transition-colors"></span>
+                      <span>Contact</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Legal */}
+              <div>
+                <h4 className="text-sm font-semibold text-white mb-4 uppercase tracking-wide">Legal</h4>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="#" className="group flex items-center gap-2 text-sm text-gray-400 hover:text-[#c9975b] transition-all duration-200">
+                      <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-[#c9975b] transition-colors"></span>
+                      <span>Privacy Policy</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="group flex items-center gap-2 text-sm text-gray-400 hover:text-[#c9975b] transition-all duration-200">
+                      <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-[#c9975b] transition-colors"></span>
+                      <span>Terms of Service</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div className="pt-8 border-t border-gray-800">
+            <p className="text-xs text-gray-500">
+              © 2025 Kiongozi Platform. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

@@ -54,8 +54,14 @@ export default function LMSLayout({
           <div className="flex items-center justify-between h-14 sm:h-16">
             {/* Logo & Brand */}
             <Link href="/lms/browse" className="flex items-center gap-2 sm:gap-3 group">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center bg-gradient-to-br from-[#c9975b] to-[#b58647] group-hover:scale-105 transition-transform flex-shrink-0">
-                <span className="text-xl sm:text-2xl">🌱</span>
+              <div className="w-8 h-8 sm:w-10 sm:h-10 relative flex-shrink-0 group-hover:scale-105 transition-transform">
+                <Image
+                  src="/Kiongozi.png"
+                  alt="Kiongozi"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="hidden xs:block">
                 <h1 className="text-sm sm:text-lg font-bold text-white tracking-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>

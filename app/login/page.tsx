@@ -3,6 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getSupabase } from '../utils/supabaseClient';
 import PasswordInput from '@/components/PasswordInput';
 
@@ -60,8 +61,14 @@ function LoginForm() {
       <div className="w-full max-w-md">
         {/* Logo & Title */}
         <div className="text-center mb-8">
-          <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#c9975b] to-[#b58647] flex items-center justify-center">
-            <span className="text-3xl">🌱</span>
+          <div className="w-16 h-16 mx-auto mb-4 relative">
+            <Image
+              src="/Kiongozi.png"
+              alt="Kiongozi"
+              width={64}
+              height={64}
+              className="w-full h-full object-contain"
+            />
           </div>
           <h1 className="text-3xl font-bold text-white mb-2">Welcome Back</h1>
           <p className="text-gray-400">Sign in to continue your learning journey</p>

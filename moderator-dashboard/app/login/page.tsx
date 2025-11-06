@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { getSupabase } from '../utils/supabaseClient';
 
 export default function LoginPage() {
@@ -60,6 +61,15 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-[#f8f9fa]">
       <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
         <div className="text-center mb-8">
+          <div className="w-16 h-16 mx-auto mb-4 relative">
+            <Image
+              src="/Kiongozi.png"
+              alt="Kiongozi"
+              width={64}
+              height={64}
+              className="w-full h-full object-contain"
+            />
+          </div>
           <h1 className="text-3xl font-bold text-[#1c1d1f]">Kiongozi</h1>
           <p className="text-gray-600 mt-2">Moderator Dashboard</p>
         </div>

@@ -2,6 +2,7 @@
 
 import { useUser } from '../contexts/UserContext';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import {
   LayoutDashboard,
@@ -51,9 +52,20 @@ export default function DashboardLayout({
               >
                 {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
-              <div>
-                <h1 className="text-2xl font-bold">Kiongozi</h1>
-                <p className="text-sm text-gray-300">Moderator Dashboard</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 relative flex-shrink-0">
+                  <Image
+                    src="/Kiongozi.png"
+                    alt="Kiongozi"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div>
+                  <h1 className="text-2xl font-bold">Kiongozi</h1>
+                  <p className="text-sm text-gray-300">Moderator Dashboard</p>
+                </div>
               </div>
             </div>
             <div className="flex items-center gap-4">

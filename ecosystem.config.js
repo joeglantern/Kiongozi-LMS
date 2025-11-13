@@ -7,7 +7,10 @@ module.exports = {
       args: 'start -- -p 3002',
       env: {
         NODE_ENV: 'production',
-        PORT: 3002
+        PORT: 3002,
+        NEXT_PUBLIC_SUPABASE_URL: 'https://jdncfyagppohtksogzkx.supabase.co',
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpkbmNmeWFncHBvaHRrc29nemt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ2ODg3NzgsImV4cCI6MjA3MDI2NDc3OH0.mQwRTAu2UYwsF_cmlIQLVVVuCTDMHjsBrxWdWPMQMFQ',
+        NEXT_PUBLIC_API_URL: 'https://kiongozi-api.onrender.com/api/v1'
       },
       instances: 1,
       exec_mode: 'fork',

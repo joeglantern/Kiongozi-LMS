@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { getCourses, getCategories } from '@/app/utils/courseClient';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -69,12 +68,7 @@ export default function BrowsePage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <div className="bg-[#1c1d1f] text-white py-10 sm:py-16 lg:py-20">
-        <motion.div
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-5 sm:mb-8 lg:mb-10 rounded-lg bg-[#c9975b] flex items-center justify-center shadow-lg">
             <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
           </div>
@@ -84,7 +78,7 @@ export default function BrowsePage() {
           <p className="text-sm sm:text-lg lg:text-xl text-gray-300 font-medium leading-relaxed max-w-2xl mx-auto px-4">
             Structured learning paths for building real-world skills. Choose your path and start learning today.
           </p>
-        </motion.div>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8 lg:py-12">
